@@ -24,7 +24,7 @@ public class FileOperation {
         }
     }
     // 1 feladat könyvtárak listázása
-    
+
     public static void printDirsInDirectory(String filePlace) throws IOException {
         File f = new File(filePlace);
         FileFilter directoryFilter = new FileFilter() {
@@ -40,6 +40,20 @@ public class FileOperation {
                 System.out.print("     file:");
             }
             System.out.println(file.getCanonicalPath());
+        }
+    }
+    // 2 feladat file-ok listázása az alkönyvtárakból is
+    public static void printFilesInDirectory(String filePlace) {
+
+        File directory = new File(filePlace);
+        //az adott könyvtárból az összes file-t lekérjük
+        File[] fList = directory.listFiles();
+        for (File file : fList){
+            if (file.isFile()){
+                System.out.println(file.getAbsolutePath());
+            } else if (file.isDirectory()){
+                printFilesInDirectory(file.getAbsolutePath());
+            }
         }
     }
 }
