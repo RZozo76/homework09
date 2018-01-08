@@ -82,5 +82,7 @@ public class Main {
         FileOperation.printDirsInDirectory("C:\\Directory1\\");
         // 2 feladat file-ok listázása
         FileOperation.printFilesInDirectory("C:\\Directory1");
+        // 3 feladat
+        FileOperation.printAllInDirectory("C:\\Directory1");
     }
 }

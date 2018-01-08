@@ -56,4 +56,18 @@ public class FileOperation {
             }
         }
     }
+    // 3 feladat összes file és könyvtár listázása
+    public static void printAllInDirectory(String filePlace) {
+        File dir = new File(filePlace);
+        String[] files = dir.list();
+        if (files.length == 0) {
+            System.out.println("The directory is empty");
+        } else {
+            System.out.println("3. feladathoz file-ok és könyvtárak nevei:");
+            for (String aFile : files) {
+                System.out.println(aFile);
+            }
+        }
+}
+
 }
